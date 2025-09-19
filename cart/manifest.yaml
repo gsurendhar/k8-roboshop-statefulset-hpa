@@ -87,7 +87,7 @@ spec:
   selector: 
     component: cart
     project: roboshop
-    tier: database
+    tier: backend
   ports:
     protocol: "TCP"
     port: 8080   # service port
