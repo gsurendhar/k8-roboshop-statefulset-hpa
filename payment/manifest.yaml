@@ -107,7 +107,7 @@ spec:
   selector: 
     component: payment
     project: roboshop
-    tier: database
+    tier: backend
   ports:
     protocol: "TCP"
     port: 8080   # service port
