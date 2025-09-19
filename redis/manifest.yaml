@@ -66,7 +66,7 @@ spec:
         image: gsurendhar/redis:v1
         volumeMounts: 
         - name: redis-data
-          mountPath: /data/db 
+          mountPath: /data
   volumeClaimTemplates:
   - metadata:
       name: redis-data
