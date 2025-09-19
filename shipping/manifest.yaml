@@ -88,7 +88,7 @@ spec:
   selector: 
     component: shipping
     project: roboshop
-    tier: database
+    tier: backend
   ports:
     protocol: "TCP"
     port: 8080   # service port
