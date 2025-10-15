@@ -12,7 +12,7 @@ data:
   MONGO_URL: "mongodb://mongodb:27017/catalogue"
     
 ---
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: catalogue
@@ -23,7 +23,7 @@ metadata:
     project: roboshop
     tier: backend
 spec:
-  replicaset: 1
+  replicas: 1
   # These are the labels replica set use to create pod replicas, this should match pod labels then only replicas will created
   selector:
     matchLabels:
@@ -90,6 +90,6 @@ spec:
     project: roboshop
     tier: backend
   ports:
-    protocol: "TCP"
-    port: 8080   # service port
-    targetPort: 8080    # container port
+    - protocol: TCP
+      port: 8080   # service port
+      targetPort: 8080    # container port
