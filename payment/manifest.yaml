@@ -9,8 +9,8 @@ metadata:
     tier: backend 
 type: Opaque
 data:
-  RABBITMQ_DEFAULT_USER: "cm9ib3Nob3AK"
-  RABBITMQ_DEFAULT_PASS: "cm9ib3Nob3AxMjMK"
+  AMQP_USER: "cm9ib3Nob3AK"
+  AMQP_PASS: "cm9ib3Nob3AxMjMK"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -29,7 +29,7 @@ data:
   AMQP_HOST: "rabbitmq"
     
 ---
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: payment
@@ -40,7 +40,7 @@ metadata:
     project: roboshop
     tier: backend
 spec:
-  replicaset: 1
+  replicas: 1
   # These are the labels replica set use to create pod replicas, this should match pod labels then only replicas will created
   selector:
     matchLabels:
@@ -109,6 +109,6 @@ spec:
     project: roboshop
     tier: backend
   ports:
-    protocol: "TCP"
-    port: 8080   # service port
-    targetPort: 8080    # container port
+    - protocol: TCP
+      port: 8080   # service port
+      targetPort: 8080    # container port
