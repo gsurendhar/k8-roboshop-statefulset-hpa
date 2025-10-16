@@ -69,7 +69,7 @@ spec:
   replicas: 3
   template:
     metadata:
-      labels
+      labels:
         component: mysql
         project: roboshop
         tier: database
