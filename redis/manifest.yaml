@@ -56,14 +56,14 @@ spec:
   replicas: 3
   template:
     metadata:
-      labels
+      labels :
         component: redis
         project: roboshop
         tier: database
     spec:
       containers:
       - name: redis
-        image: gsurendhar/redis:v1
+        image: redis:7.0
         volumeMounts: 
         - name: redis-data
           mountPath: /data
