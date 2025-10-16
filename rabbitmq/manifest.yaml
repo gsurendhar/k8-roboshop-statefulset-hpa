@@ -70,7 +70,7 @@ spec:
   replicas: 3
   template:
     metadata:
-      labels
+      labels:
         component: rabbitmq
         project: roboshop
         tier: database
