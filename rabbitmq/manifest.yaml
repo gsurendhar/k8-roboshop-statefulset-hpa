@@ -89,8 +89,7 @@ spec:
       name: rabbitmq-data
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      # storageClassName: "roboshop-ebs"
-      storageClassName: standard
+      storageClassName: "roboshop-ebs"
       resources:
         requests:
           storage: 2Gi
