@@ -42,9 +42,6 @@ spec:
       containers:
       - name: shipping
         image: gsurendhar/shipping:v2
-        envFrom:
-        - configMapRef:
-            name: shipping
         resources:
           requests:
             cpu: "100m"
@@ -52,6 +49,9 @@ spec:
           limits:
             cpu: "200m"
             memory: "512Mi"
+        envFrom:
+        - configMapRef:
+            name: shipping
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
@@ -90,6 +90,6 @@ spec:
     project: roboshop
     tier: backend
   ports:
-    - protocol: TCP
-      port: 8080   # service port
-      targetPort: 8080    # container port
+  - protocol: TCP
+    port: 8080   # service port
+    targetPort: 8080    # container port
