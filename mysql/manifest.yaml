@@ -77,12 +77,12 @@ spec:
       containers:
       - name: mysql
         image: gsurendhar/mysql:v1
-        volumeMounts: 
-        - name: mysql-data
-          mountPath: /var/lib/mysql
         envFrom:
         - secretRef:
             name: mysql
+        volumeMounts: 
+        - name: mysql-data
+          mountPath: /var/lib/mysql
   volumeClaimTemplates:
   - metadata:
       name: mysql-data
